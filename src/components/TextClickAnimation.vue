@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div ref="textContainer" class="text-content">
-      这是一段会拆分动画的文字，点击按钮查看效果！
+      我改一下看看还能不能部署了！
     </div>
     <button @click="handleAnimate">点击触发动画</button>
   </div>
