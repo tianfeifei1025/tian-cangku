@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div ref="textContainer" class="text-content">
-      我改一下看看还能不能部署了！
+      别睡了滚起来！！！！
     </div>
     <button @click="handleAnimate">点击触发动画</button>
   </div>
