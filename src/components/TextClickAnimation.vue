@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div ref="textContainer" class="text-content">
-      别睡了滚起来！！！！
+      求你了李苗苗，别睡了太阳都晒屁股了！！！
     </div>
     <button @click="handleAnimate">点击触发动画</button>
   </div>
