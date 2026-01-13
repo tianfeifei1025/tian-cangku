@@ -1,19 +1,24 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-// 导入需要跳转的组件（根据用户实际组件路径调整）
-import TextClickAnimation from '@/components/TextClickAnimation.vue';
-import VantaBackground from '@/components/VantaBackground.vue';
+import Vue from 'vue'
+import VueRouter from 'vue-router'
 
-// 安装Vue Router插件
-Vue.use(VueRouter);
+Vue.use(VueRouter)
 
-// 定义路由规则（路径与组件的映射）
 const routes = [
-  { path: '/', name: 'Home', component: TextClickAnimation }, // 默认跳转至文字动画页面
-  { path: '/vanta', name: 'Vanta', component: VantaBackground } // 跳转到Vanta背景组件
-];
+  { path: '/', name: 'Home', component: () => import('@/views/Home.vue') },
+  { path: '/about', name: 'About', component: () => import('@/views/About.vue') },
+  { path: '/calendar', name: 'Calendar', component: () => import('@/views/CalendarView.vue') },
+  { path: '/post/:id', name: 'PostDetail', component: () => import('@/views/PostDetail.vue') },
+  { path: '/project/:id', name: 'ProjectDetail', component: () => import('@/views/ProjectDetail.vue') },
+  { path: '/404', name: 'NotFound', component: () => import('@/views/NotFound.vue') },
+  { path: '*', redirect: '/404' },
+]
 
-// 创建路由实例
-const router = new VueRouter({ routes });
+const router = new VueRouter({
+  mode: 'hash',
+  routes,
+  scrollBehavior() {
+    return { x: 0, y: 0 }
+  },
+})
 
-export default router;
+export default router
